@@ -24,14 +24,21 @@ def tetraanswer():
     tetra = (float(tside) ** 3) / (6 * float(rot))
     print("Tetrahedronens volym är: " + str(tetra) + " cm³")
 
+def bmianswer():
+    height = input(str("Ange din längd i meter: "))
+    weight = input(str("Ange din vikt i kilo: "))
+    bmi = (float(weight)) / ((float(height) ** 2))
+    print("Ditt bmi är: " + str(bmi))
+
 
 def menu():
     print('\n\n========================================')
     print('|            Vad vill du göra?         |')
     print('|                                      |')
-    print('|  a. Beräkna volymen på en kub        |')
-    print('|  b. Beräkna volymen på en tertahedron|')
-    print('|  c. Avsluta                          |')
+    print('|  1. Beräkna volymen på en kub        |')
+    print('|  2. Beräkna volymen på en tertahedron|')
+    print('|  3. Beräkna ditt bmi                 |')
+    print('|  4. Avsluta                          |')
     print('========================================')
     
 
@@ -46,6 +53,8 @@ while True:
         tetraanswer()
         count += 1   
     elif choice == "3":
+        bmianswer()
+    elif choice == "4":
         print(f'Du har gjort {count} beräkningar. Välkommen tillbaka')
         break
     else:

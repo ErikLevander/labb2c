@@ -3,13 +3,7 @@ import math
 count = 0
 
 
-'''def ask_user(prompt):
-    s = input(prompt)
-    try:
-        result = eval(s)
-        return result
-    except:
-        return 0'''
+
 
 
 def cubeanswer():
@@ -30,6 +24,13 @@ def bmianswer():
     bmi = (float(weight)) / ((float(height) ** 2))
     print("Ditt bmi är: " + str(bmi))
 
+def cylinderanswer():
+    print("Ange höjden och radien på cylindern: ")
+    height = input(str("Höjden: "))
+    radius = input(str("Radien: "))
+    cylinder = (math.pi * eval(radius) ** 2 * eval(height))
+    print("Cylinderns volym är: " + str(cylinder) + "cm³")
+
 
 def menu():
     print('\n\n========================================')
@@ -38,7 +39,8 @@ def menu():
     print('|  1. Beräkna volymen på en kub        |')
     print('|  2. Beräkna volymen på en tertahedron|')
     print('|  3. Beräkna ditt bmi                 |')
-    print('|  4. Avsluta                          |')
+    print('|  4. Beräkna volymen på en cylinder   |')
+    print('|  5. Avsluta                          |')
     print('========================================')
     
 
@@ -54,7 +56,11 @@ while True:
         count += 1   
     elif choice == "3":
         bmianswer()
+        count +=1
     elif choice == "4":
+        cylinderanswer()
+        count +=1
+    elif choice == "5":
         print(f'Du har gjort {count} beräkningar. Välkommen tillbaka')
         break
     else:
